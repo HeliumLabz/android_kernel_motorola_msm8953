@@ -823,9 +823,6 @@ static int msm_quin_mi2s_ch_get(struct snd_kcontrol *kcontrol,
 	return 0;
 }
 
-
-static int msm_slim_1_tx_ch_get(struct snd_kcontrol *kcontrol,
-
 static int msm_slim_1_tx_ch_get(struct snd_kcontrol *kcontrol,
 	struct snd_ctl_elem_value *ucontrol)
 {
