@@ -490,21 +490,10 @@ int madera_init_dai(struct madera_priv *priv, int dai);
 int madera_set_output_mode(struct snd_soc_codec *codec, int output, bool diff);
 
 /* Following functions are for use by machine drivers */
-static inline int madera_register_notifier(struct snd_soc_codec *codec,
-					   struct notifier_block *nb)
-{
-	struct madera *madera = dev_get_drvdata(codec->dev->parent);
-
-	return blocking_notifier_chain_register(&madera->notifier, nb);
-}
-
-static inline int madera_unregister_notifier(struct snd_soc_codec *codec,
-					     struct notifier_block *nb)
-{
-	struct madera *madera = dev_get_drvdata(codec->dev->parent);
-
-	return blocking_notifier_chain_unregister(&madera->notifier, nb);
-}
+extern int madera_register_notifier(struct snd_soc_codec *codec,
+				    struct notifier_block *nb);
+extern int madera_unregister_notifier(struct snd_soc_codec *codec,
+				      struct notifier_block *nb);
 
 extern const struct snd_soc_dai_ops madera_slim_dai_ops;
 
