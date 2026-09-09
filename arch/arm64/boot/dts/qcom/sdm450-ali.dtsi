@@ -151,6 +151,7 @@
 		clock-names = "iface_clk", "core_clk";
 		clocks = <&clock_gcc clk_gcc_blsp1_ahb_clk>,
 			 <&clock_gcc clk_gcc_blsp1_qup1_i2c_apps_clk>;
+		status = "okay";
 
 		fusb302@22 {
 			compatible = "fairchild,fusb302";

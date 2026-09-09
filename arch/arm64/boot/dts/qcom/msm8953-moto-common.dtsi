@@ -34,8 +34,13 @@
 
 	reserved-memory {
 		ramoops_mem: ramoops_mem_region {
-			no-map;
+			compatible = "ramoops";
 			reg = <0x0 0xef000000 0x0 0xC0000>;
+			console-size = <0x40000>;
+			pmsg-size = <0x40000>;
+			record-size = <0x3F800>;
+			ramoops-annotate-size = <0x800>;
+			no-map;
 			label = "ramoops_mem";
 		};
 		tzlog_bck_mem: tzlog_bck_region {
@@ -760,21 +765,6 @@
 			qcom,sensor-name = "back_temp";
 			qcom,scaling-factor = <1000>;
 		};
-	};
-
-	ramoops {
-		compatible = "ramoops";
-		status = "ok";
-
-		android,ramoops-buffer-start = <0xef000000>;
-		android,ramoops-buffer-size = <0xC0000>;
-		android,ramoops-console-size = <0x40000>;
-		android,ramoops-pmsg-size = <0x40000>;
-		android,ramoops-record-size = <0x3F800>;
-		android,ramoops-annotate-size = <0x800>;
-		android,ramoops-dump-oops = <0x1>;
-
-		linux,contiguous-region = <&ramoops_mem>;
 	};
 
 	wdog: qcom,wdt@b017000 {

@@ -488,6 +488,7 @@ config SND_SOC_CS47L15
 
 config SND_SOC_CS47L35
 	tristate
+	default y if MFD_CS47L35
 
 config SND_SOC_CS47L85
 	tristate
@@ -590,6 +591,7 @@ config SND_SOC_MADERA
 config SND_SOC_MADERA_SLIMBUS
 	tristate
 	depends on SLIMBUS
+	default y if SND_SOC_CS47L35
 
 config SND_SOC_MAX98088
        tristate
