@@ -377,6 +377,14 @@ static const struct snd_soc_pcm_stream cs35l34_params = {
 	.channels_max = 2,
 };
 
+static const struct snd_soc_pcm_stream cs35l35_pdm_params = {
+	.formats = SNDRV_PCM_FORMAT_S16_LE,
+	.rate_min = 96000,
+	.rate_max = 96000,
+	.channels_min = 1,
+	.channels_max = 2,
+};
+
 static struct snd_soc_dai_link msm8952_madera_l34_dai_link[] = {
 	{
 		.name = "MADERA-AMP",
