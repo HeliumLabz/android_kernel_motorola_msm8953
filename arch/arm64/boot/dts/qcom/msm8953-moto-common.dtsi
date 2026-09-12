@@ -40,6 +40,7 @@
 			pmsg-size = <0x40000>;
 			record-size = <0x3F800>;
 			ramoops-annotate-size = <0x800>;
+			dump-oops;
 			no-map;
 			label = "ramoops_mem";
 		};
